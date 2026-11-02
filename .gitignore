@@ -1,0 +1,23 @@
+.dart_tool/
+build/
+
+# Configuração local e credenciais
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+credentials.json
+*service-account*.json
+
+# Arquivos temporários e do sistema
+*.log
+*.tmp
+*.temp
+*.swp
+*~
+.DS_Store
+Thumbs.db

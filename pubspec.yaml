@@ -1,0 +1,7 @@
+name: atomo_mais
+description: Modelos de domínio e dados educativos mockados do Átomo+ — Sprint 1.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'

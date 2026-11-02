@@ -1,0 +1,11 @@
+export 'src/models/alternativa.dart';
+export 'src/models/area_aplicacao.dart';
+export 'src/models/categoria.dart';
+export 'src/models/pergunta.dart';
+export 'src/models/tentativa_quiz.dart';
+export 'src/models/usuario.dart';
+export 'src/data/areas_mock.dart';
+export 'src/data/perguntas_mock.dart';
+export 'src/quiz/motor_quiz.dart';
+export 'src/quiz/selecao_perguntas.dart';
+export 'src/historico/historico_tentativas.dart';
