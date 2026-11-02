@@ -2,6 +2,12 @@
 
 Plataforma educativa do Challenge CTMSP da FIAP, Sprint 1. Dart puro no console, sem Flutter, API, banco ou dependências externas.
 
+O Átomo+ propõe aproximar o público das aplicações benéficas da tecnologia nuclear em Saúde, Agricultura, Indústria, Pesquisa Científica e Energia por meio de conteúdos educativos e quiz com explicações.
+
+Segundo orientação verbal do professor, relatada pela equipe, esta entrega foi desenvolvida em Dart console. Esse registro documenta a orientação recebida e **não afirma alteração do edital oficial**. A equipe ainda deve conferir os critérios formais e obter confirmação acadêmica quando necessário.
+
+[Repositório GitHub](https://github.com/Mpgouveia-n/Atomo---Mobile-Application-) · [Roteiro de 3–5 minutos](docs/roteiro_demonstracao.md) · [Checklist de entrega](docs/checklist_entrega.md) · [Relatório de homologação](docs/homologacao.md)
+
 ## Progresso real
 
 - TASK 01: modelos revisados, 32 testes nativos aprovados.
@@ -11,7 +17,22 @@ Plataforma educativa do Challenge CTMSP da FIAP, Sprint 1. Dart puro no console,
 - TASK 04: motor do quiz integrado ao console, com cinco perguntas por categoria, feedback educativo e resultado usando TentativaQuiz.
 - TASK 05: histórico temporário de tentativas e ranking da categoria integrado ao menu.
 - Verificação final: 144 testes aprovados, zero falhas; dart analyze sem problemas; ranking vazio e após quiz verificados pela entrada real do main.
-- TASK 06 não iniciada. Sem persistência ou dependências externas.
+- TASK 06: auditoria técnica, revisão pedagógica documental, homologação e preparação da demonstração concluídas em 01/11/2026. A entrega acadêmica e o aceite do professor continuam pendentes de confirmação externa.
+
+## Escopo funcional da Sprint 1
+
+Identificação temporária, seleção manual de categoria, exploração de cinco áreas, quiz completo com feedback, resultado, histórico em memória e ranking da categoria. Não há funcionalidades de próximas sprints nesta entrega.
+
+## Homologação final
+
+Executada em Windows x64, Dart SDK 3.13.1. Resultado: **144 testes aprovados, zero falhas**, e análise estática sem problemas. Não foram necessárias correções no código ou novos testes: os cenários solicitados já estavam cobertos.
+
+- [Saída integral dos testes](docs/evidencias/testes.txt) e [análise estática](docs/evidencias/analise.txt).
+- [Simulação pelo main](docs/evidencias/fluxo_console.txt): nickname e categoria inválidos, exploração das cinco áreas, quiz com resposta inválida, três acertos (30 pontos), nova partida com cinco acertos (50 pontos), ranking atualizado e encerramento.
+- [EOF durante o quiz](docs/evidencias/eof_quiz.txt): encerramento sem tentativa incompleta. Os testes também verificam ausência de registro e preservação das tentativas anteriores.
+- Melhores resultados e desempate por tempo foram verificados nos testes de histórico; não se apresentam dados de teste como participantes reais.
+
+As simulações usaram entradas programadas no stdin real do aplicativo. Não são vídeo nem comprovação de usabilidade com participantes. O tempo de 1 segundo nesses registros decorre da execução rápida e do arredondamento existente. Veja os comandos e a avaliação pedagógica no [relatório](docs/homologacao.md).
 
 ## Execução e testes
 
@@ -79,6 +100,10 @@ Simulação da TASK 05 pelo main: Ana, CRIANCA, consulta vazia, quiz com cinco a
 
 ## Organização
 
+O ponto de entrada liga o terminal à interface. A interface chama o motor do quiz e o histórico; essas camadas reutilizam os modelos de domínio. Modelos não importam código de console. Os dados são objetos em memória, sem tabelas ou simulação de SQL.
+
+Relacionamentos: Usuario possui Categoria; Pergunta referencia AreaAplicacao e contém quatro Alternativa; TentativaQuiz referencia Usuario e Categoria. HistoricoTentativas armazena as próprias TentativaQuiz. A pontuação permanece calculada no modelo, sem valor redundante.
+
 - bin/main.dart: ligação da entrada e saída reais do terminal à aplicação.
 - lib/src/console/aplicacao_console.dart: identificação, menus, exploração e encerramento da sessão.
 - lib/src/console/quiz_console.dart: interação das perguntas, feedback e apresentação do resultado.
@@ -96,6 +121,7 @@ Simulação da TASK 05 pelo main: Ana, CRIANCA, consulta vazia, quiz com cinco a
 - test/quiz_test.dart: 38 testes do motor e interação, incluindo resultados com zero, dois e cinco acertos nas três categorias, cancelamento, repetição de partidas, tempo mínimo e EOF.
 - test/historico_test.dart: 26 testes de registro, rejeições, múltiplas tentativas, critérios de classificação, identidade temporária, proteção das listas, integração e EOF.
 - test/todos_test.dart: execução conjunta dos 144 testes.
+- docs/: roteiro acadêmico, checklist, relatório técnico e evidências textuais de execução.
 
 ## Decisões dos modelos
 
@@ -135,6 +161,10 @@ Paráfrases educativas, sem consultas à rede pela aplicação:
 
 ## Pendências e validação manual
 
-Não há falhas técnicas conhecidas nos testes executados. Cabe revisão pedagógica humana da clareza e dificuldade dos textos para cada público e aprovação do conteúdo pela equipe do Challenge. Os testes verificam regras e integridade, sem substituir a avaliação editorial.
-Recomenda-se conferir manualmente a legibilidade e os acentos no terminal utilizado para a apresentação. Não há pendências técnicas conhecidas da TASK 05 nos cenários verificados.
-Limitações da Sprint 1: dados fixos, sem aleatoriedade, histórico persistente, login, senha, Flutter, API, banco de dados, Oracle ou assistente de IA. Ranking geral e de outras categorias estão disponíveis como consultas do componente, sem menus adicionais. A TASK 06 depende de requisitos e autorização; não foi iniciada.
+Não há falhas técnicas conhecidas nos cenários executados. A revisão documental das cinco áreas e 15 perguntas consta no relatório; validação por especialista e avaliação da linguagem com o público-alvo ainda dependem da equipe acadêmica. O aceite acadêmico, vídeo se exigido, prazo, identificação dos integrantes e envio no portal devem ser conferidos no checklist.
+
+Limitações: sem Flutter UI, API, banco, Oracle ou IA; sem cadastro, autenticação ou histórico persistente. Há cinco perguntas fixas por categoria, sem sorteio. O console mantém um nickname por execução; reiniciar apaga os resultados. O ranking geral e de outras categorias existe como consulta do componente, sem menu adicional. O desempate usa segundos arredondados e comparação lexicográfica nativa de nicknames, sem ordenação linguística avançada.
+
+## Evoluções previstas, sujeitas às próximas sprints
+
+Avaliar interface Flutter, ampliação e validação pedagógica do conteúdo, persistência e serviços de backend conforme os requisitos acadêmicos futuros. Integrações de API, banco ou IA precisam de escopo e autorização próprios. Nenhuma dessas evoluções foi implementada nesta homologação.
