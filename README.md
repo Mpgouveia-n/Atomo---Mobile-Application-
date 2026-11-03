@@ -229,6 +229,9 @@ Essas funcionalidades futuras não são apresentadas como implementadas nesta Sp
 
 O vídeo de apresentação deverá demonstrar a execução real do projeto, incluindo:
 
+**Vídeo da Sprint 1:**
+[Assistir à demonstração do Átomo+ no YouTube](https://www.youtube.com/watch?v=pjzzZ6KsuLo)
+
 - Inicialização do programa.
 - Identificação do participante.
 - Seleção de categoria.
