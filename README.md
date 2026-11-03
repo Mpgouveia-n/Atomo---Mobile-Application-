@@ -1,4 +1,3 @@
-
 # Átomo+ — Challenge CTMSP 2026 | Sprint 1
 
 **Disciplina:** Mobile Application Development  
@@ -28,7 +27,7 @@ Seu objetivo é aproximar a sociedade da tecnologia nuclear, demonstrando suas a
 - Pesquisa científica
 - Energia
 
-A proposta busca combater a desinformação sobre a tecnologia nuclear utilizando conteúdos educativos e atividades interativas.
+A proposta busca combater a desinformação sobre a tecnologia nuclear por meio de conteúdos educativos e atividades interativas.
 
 Nesta primeira Sprint, foi desenvolvida uma prova de conceito utilizando **Dart em console**, conforme orientação do professor responsável pela turma.
 
@@ -60,6 +59,7 @@ Cada categoria possui perguntas adaptadas ao público correspondente.
 O usuário pode explorar as cinco áreas da tecnologia nuclear.
 
 Cada área apresenta:
+
 - Nome e descrição.
 - Informações educativas.
 - Curiosidades relacionadas ao tema.
@@ -82,6 +82,7 @@ A pontuação varia conforme a categoria:
 - ADULTO: 30 pontos por acerto.
 
 Ao finalizar o quiz, são apresentados:
+
 - Quantidade de acertos.
 - Quantidade de erros.
 - Percentual de aproveitamento.
@@ -100,7 +101,7 @@ Ao finalizar o quiz, são apresentados:
 ## Tecnologias utilizadas
 
 - Dart 3.x
-- Programação Orientada a Objetos
+- Programação Orientada a Objetos (POO)
 - Estruturas de dados e coleções
 - Validação de entradas
 - Tratamento de erros
@@ -130,11 +131,6 @@ test/
   suporte.dart
   todos_test.dart
 
-docs/
-  evidencias/
-  homologacao.md
-  roteiro_demonstracao.md
-
 pubspec.yaml
 pubspec.lock
 .gitignore
@@ -147,7 +143,7 @@ README.md
 
 Ter o Dart SDK 3.x instalado e configurado no computador.
 
-Documentação oficial:
+Documentação oficial:  
 https://dart.dev/get-dart
 
 ### Executar a aplicação
@@ -176,7 +172,7 @@ O menu principal disponibiliza as opções:
 
 ## Testes e qualidade
 
-O projeto possui testes automatizados para verificar o comportamento das funcionalidades.
+O projeto possui testes automatizados para verificar o comportamento das principais funcionalidades.
 
 Para executar a análise estática:
 
@@ -190,33 +186,24 @@ Para executar os testes:
 dart run test/todos_test.dart
 ```
 
-Na verificação registrada em 01/11/2026, foram documentados:
+Os testes abrangem os modelos de dados, as perguntas educativas, as regras do quiz, o histórico, o ranking e o comportamento da aplicação em console.
 
-- 144 testes aprovados.
-- Nenhuma ocorrência reportada pela análise estática.
-
-Esses resultados estão registrados nos arquivos de evidência do projeto e devem ser confirmados novamente antes da entrega.
-
-## Documentação complementar
-
-- [Roteiro de demonstração](docs/roteiro_demonstracao.md)
-- [Homologação técnica](docs/homologacao.md)
-- [Evidências dos testes](docs/evidencias/testes.txt)
-- [Evidências da análise estática](docs/evidencias/analise.txt)
-- [Evidências de execução do console](docs/evidencias/fluxo_console.txt)
+**Observação:** os comandos devem ser executados no ambiente utilizado pela equipe para confirmar o funcionamento da versão entregue.
 
 ## Escopo da Sprint 1
 
 Esta entrega apresenta a experiência educativa inicial do Átomo+ utilizando Dart em console.
 
 Estão contemplados:
+
 - Conteúdos educativos.
 - Perfis por faixa etária.
 - Quiz interativo.
-- Pontuação.
+- Sistema de pontuação.
 - Histórico e ranking em memória.
 
 Para etapas futuras, a proposta geral contempla:
+
 - Interface gráfica para site e aplicativo.
 - Assistente de inteligência artificial.
 - Integração com APIs.
@@ -227,23 +214,26 @@ Essas funcionalidades futuras não são apresentadas como implementadas nesta Sp
 
 ## Vídeo demonstrativo
 
-O vídeo de apresentação deverá demonstrar a execução real do projeto, incluindo:
+O vídeo apresenta a demonstração do projeto Átomo+ em Dart Console, incluindo as funcionalidades desenvolvidas para a primeira Sprint.
 
 **Vídeo da Sprint 1:**
+
 [Assistir à demonstração do Átomo+ no YouTube](https://www.youtube.com/watch?v=pjzzZ6KsuLo)
+
+A demonstração contempla:
 
 - Inicialização do programa.
 - Identificação do participante.
 - Seleção de categoria.
 - Exploração das áreas educativas.
-- Execução do quiz.
+- Execução do quiz interativo.
 - Apresentação dos resultados.
 - Funcionamento do ranking.
-
-**Link do vídeo:** A inserir após publicação no YouTube.
 
 ## Considerações finais
 
 O Átomo+ foi idealizado para apresentar a tecnologia nuclear de forma educativa, acessível e interativa.
 
-A implementação em Dart console demonstra as principais regras e funcionalidades da experiência proposta, constituindo uma base para a evolução da solução nas próximas Sprints do Challenge CTMSP 2026.
+A implementação em Dart Console demonstra as principais regras de negócio e funcionalidades da experiência proposta, constituindo uma base para a evolução da plataforma nas próximas Sprints do Challenge CTMSP 2026.
+
+O projeto busca incentivar a aprendizagem, estimular a curiosidade científica e contribuir para uma compreensão mais ampla das aplicações pacíficas da tecnologia nuclear.
